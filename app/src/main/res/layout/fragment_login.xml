@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.motion.MotionLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:showPaths="true"
+        app:layoutDescription="@xml/scene_sean_codes_login"
+        android:id="@+id/motionlayout_container_login">
+
+    <TextView
+            android:text="User Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_username"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editText_username"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/editText_username"
+            android:layout_marginBottom="8dp" />
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText_username"
+            app:layout_constraintTop_toBottomOf="@+id/textView_username"
+            app:layout_constraintBottom_toTopOf="@+id/textView_password"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:text="Password"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:id="@+id/textView_password"
+            app:layout_constraintTop_toBottomOf="@+id/editText_username"
+            app:layout_constraintBottom_toTopOf="@+id/editText_password"
+            app:layout_constraintStart_toStartOf="@+id/editText_password"
+            android:layout_marginBottom="8dp"/>
+    <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView_password"
+            app:layout_constraintBottom_toTopOf="@+id/button_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.motion.MotionLayout>

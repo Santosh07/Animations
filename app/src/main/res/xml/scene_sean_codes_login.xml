@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetStart="@id/scene_login_start"
+        motion:constraintSetEnd="@id/scene_login_end"
+        motion:duration="1000">
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:target="@id/editText_username"
+                motion:keyPositionType="pathRelative"
+                motion:framePosition="1"
+                motion:transitionEasing="accelerate" />
+
+            <KeyPosition
+                    motion:target="@id/editText_password"
+                    motion:keyPositionType="pathRelative"
+                    motion:framePosition="1"
+                    motion:transitionEasing="linear" />
+        </KeyFrameSet>
+    </Transition>
+
+    //LOGIN START
+    <ConstraintSet android:id="@+id/scene_login_start"
+        motion:transitionEasing="accelerate">
+        <Constraint
+                android:text="User Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_username"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintBottom_toTopOf="@+id/editText_username"
+                motion:layout_constraintVertical_chainStyle="packed"
+                motion:layout_constraintStart_toStartOf="@+id/editText_username"
+                android:layout_marginBottom="8dp">
+        </Constraint>
+
+        <Constraint
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:ems="10"
+                android:id="@+id/editText_username"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/textView_username"
+                motion:layout_constraintBottom_toTopOf="@+id/textView_password"
+                motion:layout_constraintStart_toStartOf="parent"/>
+
+        <Constraint
+                android:text="Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_password"
+                android:layout_marginBottom="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/editText_username"
+                motion:layout_constraintBottom_toTopOf="@+id/editText_password"
+                motion:layout_constraintStart_toStartOf="@+id/editText_password"  />
+
+        <Constraint
+                android:id="@+id/editText_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textView_password"
+                motion:layout_constraintBottom_toTopOf="@+id/button_login"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent" />
+
+    </ConstraintSet>
+
+    //LOGIN END
+    <ConstraintSet android:id="@+id/scene_login_end">
+        <Constraint
+                android:text="User Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_username"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintBottom_toTopOf="@+id/editText_username"
+                motion:layout_constraintVertical_chainStyle="packed"
+                motion:layout_constraintEnd_toStartOf="parent"
+                android:layout_marginBottom="8dp">
+        </Constraint>
+
+        <Constraint
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:ems="10"
+                android:id="@+id/editText_username"
+                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintEnd_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/textView_username"
+                motion:layout_constraintBottom_toTopOf="@+id/textView_password" />
+
+        <Constraint
+                android:text="Password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView_password"
+                android:layout_marginBottom="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/editText_username"
+                motion:layout_constraintBottom_toTopOf="@+id/editText_password"
+                motion:layout_constraintEnd_toStartOf="parent" />
+
+        <Constraint
+                android:id="@+id/editText_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintTop_toBottomOf="@+id/textView_password"
+                motion:layout_constraintBottom_toTopOf="@+id/button_login"
+                motion:layout_constraintEnd_toStartOf="parent" />
+
+        <Constraint
+                android:text="Login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_login"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="17dp"
+                motion:layout_constraintEnd_toStartOf="@+id/button_register"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintHorizontal_chainStyle="packed"
+                motion:layout_constraintTop_toBottomOf="@+id/editText_password"
+                motion:layout_constraintBottom_toBottomOf="parent"     />
+        <Constraint
+                android:text="Register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_register"
+                android:layout_marginEnd="17dp"
+                motion:layout_constraintStart_toEndOf="@+id/button_login"
+                motion:layout_constraintTop_toTopOf="@+id/button_login"
+                motion:layout_constraintEnd_toEndOf="parent" />
+
+    </ConstraintSet>
+
+</MotionScene>
